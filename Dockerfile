@@ -1,8 +1,8 @@
 FROM php:8-apache
 
 # use docker-php-extension-installer for automatically get the right packages installed
-ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
-RUN chmod 755 /usr/local/bin/install-php-extensions
+RUN curl -o /usr/local/bin/install-php-extensions https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions && \
+    chmod +x /usr/local/bin/install-php-extensions
 
 
 # Install extensions
